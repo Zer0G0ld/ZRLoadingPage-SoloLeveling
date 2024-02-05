@@ -1,4 +1,4 @@
-document.getElementById("singUnButton").onclick = function () {
+document.getElementById("singUpButton").onclick = function () {
     window.location.href = "../SingUp/index.html";
 };
 
