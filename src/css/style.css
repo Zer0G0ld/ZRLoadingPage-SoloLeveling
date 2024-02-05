@@ -9,27 +9,39 @@ body {
 
 .background {
     position: relative;
-    /* Remova a propriedade height: 100vh; se não for necessária */
 }
 
-.presentation,
-.login {
+.content {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
 .presentation {
-    top: 20%;
+    margin-bottom: 20px;
 }
 
 .login {
-    top: 40%;
-
+    margin-top: 20px;
+    position: relative;
 }
 
+
+
 .transport {
-    border: 30px solid #ffffff; /* Altere a cor da borda para ser visível contra o fundo preto */
+    border: 30px solid #ffffff;
 }
