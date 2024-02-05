@@ -22,12 +22,12 @@ body {
 }
 
 .presentation {
-    top: 10%;
+    top: 20%;
 }
 
 .login {
-    top: 60%;
-    /* Remova a propriedade bottom: 20px; */
+    top: 40%;
+
 }
 
 .transport {
