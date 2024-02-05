@@ -5,10 +5,11 @@ body {
     font-family: 'Space Mono', monospace;
     background-color: #000000;
     color: #ffffff;
-}
-
-.background {
-    position: relative;
+    background-image: url('../img/Background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .content {
