@@ -1,5 +1,5 @@
-document.getElementById("singInButton").onclick = function () {
-    window.location.href = "../SingIp/index.html";
+document.getElementById("singUnButton").onclick = function () {
+    window.location.href = "../SingUp/index.html";
 };
 
 document.getElementById("homeButton").onclick = function () {
