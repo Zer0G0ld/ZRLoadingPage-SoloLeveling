@@ -1,3 +1,4 @@
+/* REDEFINE A PÁGINA */
 body {
     margin: 0;
     padding: 0;
@@ -12,13 +13,13 @@ body {
     height: 100vh;
 }
 
+/* ESTILIZA A PÁGINA */
 .content {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-
 }
 
 .content::before {
@@ -41,8 +42,42 @@ body {
     position: relative;
 }
 
+/* ESTILIZA A AREA DE LOGIN */
+.login input {
+    border: 2px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px;
+    width: 100%; /* Ocupa a largura completa */
+}
 
+.login button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Ocupa a largura completa */
+}
+
+.login input,
+.login button {
+    border-radius: 5px;
+}
+
+.login label {
+    color: #ffffff;
+}
 
 .transport {
     border: 30px solid #ffffff;
+}
+
+/* MEDIA QUERY PARA TELAS MENORES */
+@media only screen and (max-width: 600px) {
+    .login input,
+    .login button {
+        width: auto; /* Volta para a largura padrão */
+    }
 }
