@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&family=Workbench&display=swap');
+
 /* REDEFINE A PÁGINA */
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Space Mono', monospace;
+    font-family: monospace;
+    font-size: 14px;
     background-color: #000000;
     color: #ffffff;
     background-image: url('../img/Background.jpg');
@@ -22,6 +26,7 @@ body {
     text-align: center;
 }
 
+/* CRIA O FUNDO TRANSPARENTE */
 .content::before {
     content: '';
     position: absolute;
@@ -32,8 +37,10 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
+/* FIM */ 
 
 .presentation {
+    font-family: 'Workbench', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -56,9 +63,17 @@ body {
     background-color: #ffffff;
     color: #000000;
     padding: 10px 20px;
-    border: none;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%; /* Ocupa a largura completa */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
 }
 
 .login input,
@@ -67,6 +82,7 @@ body {
 }
 
 .login label {
+    font-family: 'Open Sans', sans-serif;
     color: #ffffff;
 }
 
