@@ -1,6 +1,6 @@
 // Redireciona ao clicar no botão
 document.getElementById("singInButton").onclick = function () {
-    window.location.href = "../SingIn/index.html";
+    window.location.href = "/Login/SingIn/index.html";
 };
 
 document.getElementById("homeButton").onclick = function () {
@@ -11,7 +11,7 @@ document.getElementById("homeButton").onclick = function () {
 function registerUser() {
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
-    var password = document.getElementById('pwd').value; // Corrigido para 'pwd'
+    var password = document.getElementById('pwd').value;
 
     // Enviar dados para o servidor
     var xhr = new XMLHttpRequest();

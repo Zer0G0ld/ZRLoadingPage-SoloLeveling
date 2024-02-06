@@ -14,25 +14,30 @@
 
 <body>
     <div class="background">
-
-        <button id="singUpButton">Criar Conta</button>
-        <button id="homeButton">Home</button>
-        
         <div class="content">
             <div class="presentation">
                 <h1>Solo Leveling</h1>
                 <h2> ... Login & Loading ... </h2>
             </div>
-                
+
             <div class="login">
-                <label>Nome: </label><input id="nome" type="text" name="nome">
+                <form action="" method="get">
+                    <label>
+                        Nome: <input id="nome" type="text" name="nome" placeholder="Nome de Usuário">
+                    </label>
+                    <br><br>
+                    <label>Email: </label><input id="email" type="email" name="email" placeholder="Example@domino.com">
+                    <br><br>
+                    <label>Senha: </label><input id="pwd" type="password" name="senha" placeholder="Sua Senha">
+                    <br><br>
+
+                    <button class="btn" type="submit" value="entrar">Entrar</button>
+                    <br><br>
+                </form>
+                <button id="singUpButton">Criar Conta</button>
                 <br><br>
-                <label>Email: </label><input id="email" type="email" name="email">
+                <button id="homeButton">Home</button>
                 <br><br>
-                <label>Senha: </label><input id="pwd" type="password" name="senha">
-                <br><br>
-            
-                <button class="btn">Entrar</button>
             </div>
         </div>
     </div>

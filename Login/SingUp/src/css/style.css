@@ -49,7 +49,7 @@ body {
     color: #ffffff;
     padding: 10px;
     margin: 5px;
-    width: 100%; /* Ocupa a largura completa */
+    width: 83%; /* Ocupa a largura completa */
 }
 
 #create button {
@@ -68,6 +68,7 @@ body {
     color: #ffffff;
     border: 2px solid #000000;
 }
+
 /* estilizando Checkbox */
 #create input[type="checkbox"] {
     appearance: none; /* Remove os estilos padrão do navegador */
