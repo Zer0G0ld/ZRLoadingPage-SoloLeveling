@@ -7,30 +7,30 @@ document.getElementById("homeButton").onclick = function () {
     window.location.href = "/index.html";
 };
 
-// Regista usuario
+// Registra o usuário
 function registerUser() {
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    var password = document.getElementById('pwd').value; // Corrigido para 'pwd'
 
     // Enviar dados para o servidor
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "rester.php", true);
+    xhr.open("POST", "register.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            // Exibir a respostar do servidor
+            // Exibir a resposta do servidor
             console.log(xhr.responseText);
         }
     };
+
+    // Enviar dados como JSON
+    var data = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    xhr.send(JSON.stringify(data));
 }
-
-// Enviar dados como JSON
-var data = {
-    username: username,
-    email: email,
-    password: password
-};
-
-xhr.send(JSON,stringify(data));

@@ -1,6 +1,6 @@
 # Arquivos de configuração
-config.php
 credentials.json
+/Login/SingUp/src/backend
 
 .history
 .vscode

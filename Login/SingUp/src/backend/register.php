@@ -1,27 +1,45 @@
 <?php
-// Recuperar dados do corpo da solicitação
-$data = json_decode(file_get_contents("php://input"));
+// Verifica se a solicitação é do tipo POST
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Verifica se os dados foram enviados como JSON
+    $inputJSON = file_get_contents('php://input');
+    $input = json_decode($inputJSON, true);
 
-// Conectar ao banco de dados (certifique-se de tratar as credenciais com segurança)
-$conn = new mysqli("localhost", "root", "sua_senha", "SoloData");
+    // Verifica se todos os campos necessários foram recebidos
+    if (isset($input['username']) && isset($input['email']) && isset($input['password'])) {
+        $username = $input['username'];
+        $email = $input['email'];
+        $password = $input['password'];
 
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Conexão com o banco de dados falhou: " . $conn->connect_error);
-}
+        // Conectar ao banco de dados (certifique-se de tratar as credenciais com segurança)
+        $conn = new mysqli("localhost", "seu_usuario", "sua_senha", "SoloData");
 
-// Preparar a declaração SQL
-$stmt = $conn->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $data->username, $data->email, password_hash($data->password, PASSWORD_BCRYPT));
+        // Verificar a conexão
+        if ($conn->connect_error) {
+            die("Conexão com o banco de dados falhou: " . $conn->connect_error);
+        }
 
-// Executar a declaração SQL
-if ($stmt->execute()) {
-    echo "Usuário registrado com sucesso!";
+        // Preparar a declaração SQL para inserção de usuário
+        $stmt = $conn->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        $stmt->bind_param("sss", $username, $email, $hashed_password);
+
+        // Executar a declaração SQL
+        if ($stmt->execute()) {
+            echo json_encode(array("message" => "Usuário registrado com sucesso"));
+        } else {
+            echo json_encode(array("error" => "Erro no registro do usuário: " . $stmt->error));
+        }
+
+        // Fechar a conexão
+        $stmt->close();
+        $conn->close();
+    } else {
+        // Caso algum campo esteja faltando, retorna mensagem de erro
+        echo json_encode(array("error" => "Todos os campos são obrigatórios"));
+    }
 } else {
-    echo "Erro no registro do usuário: " . $stmt->error;
+    // Se a solicitação não for do tipo POST, retorna mensagem de erro
+    echo json_encode(array("error" => "Método não permitido"));
 }
-
-// Fechar a conexão
-$stmt->close();
-$conn->close();
 ?>

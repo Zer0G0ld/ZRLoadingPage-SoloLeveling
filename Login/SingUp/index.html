@@ -16,20 +16,24 @@
     <div class="content">
         <div class="create">
             <h1>Registro de Conta</h1>
+            <form class="form" method="get">
+                <label>Usuário: </label><input type="text" id="username" placeholder="Nome de usuário">
+                <br><br>
+                <label>Email: </label><input type="email" id="email" placeholder="Example@dominio.com">
+                <br><br>
+                <label>Senha: </label><input type="password" id="pwd" placeholder="Sua Senha">
+                <br><br>
+                <label>
+                    <input id="chbox" type="checkbox" name="checkbox">
+                    Aceito criar esta conta!
+                </label>
+                <br><br>
 
-            <label>Usuário: </label><input id="nome" type="text" name="nome" placeholder="Nome de Usuário">
-            <br><br>
-            <label>Email: </label><input id="email" type="email" name="email" placeholder="Example@dominio.com">
-            <br><br>
-            <label>Senha: </label><input id="pwd" type="password" name="pwd" placeholder="Sua Senha">
-            <br><br>
-            <input id="chbox" type="checkbox" name="checkbox"><label> Aceito criar esta conta! </label>
-            <br><br>
-
-            <button id="enter" type="button" value="registrar" onclick="registerUser()">Registrar</button>
-            <br><br>
-            <button id="singInButton">Logar</button>
-            <button id="homeButton">Home</button>
+                <button id="enter" type="submit" value="registrar" onclick="registerUser()">Registrar</button>
+                <br><br>
+                <button id="singInButton">Logar</button>
+                <button id="homeButton">Home</button>
+            </form>
         </div>
     </div>
 
