@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&family=Workbench&display=swap');
+
+/* REDEFINE A PÁGINA */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #000000;
+    color: #ffffff;
+    background-image: url('../img/Background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* ESTILIZA A PÁGINA */
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* CRIA O FUNDO TRANSPARENTE */
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+/* FIM */ 
+
+.presentation {
+    font-family: 'Workbench', sans-serif;
+    margin-bottom: 20px;
+}
+
+.create {
+    margin-top: 20px;
+    position: relative;
+}
+
+/* ESTILIZA A AREA DE create */
+.create input {
+    border: 2px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px;
+    width: 100%; /* Ocupa a largura completa */
+}
+
+.create button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%; /* Ocupa a largura completa */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.create button:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+}
+
+.create input,
+.create button {
+    border-radius: 5px;
+}
+
+.create label {
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+}
+
+.transport {
+    border: 30px solid #ffffff;
+}
+
+/* MEDIA QUERY PARA TELAS MENORES */
+@media only screen and (max-width: 600px) {
+    .create input,
+    .create button {
+        width: auto; /* Volta para a largura padrão */
+    }
+}

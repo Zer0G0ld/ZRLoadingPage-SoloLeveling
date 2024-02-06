@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Workbench', sans-serif;
+    font-size: 14px;
+    background-color: #000000;
+    color: #ffffff;
+    
+}
+
+.background {
+    position: relative;
+    /* Remova a propriedade height: 100vh; se não for necessária */
+}
+
+.presentation,
+.login {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.presentation {
+    top: 10%;
+}
+
+.login {
+    top: 30%;
+    /* Remova a propriedade bottom: 20px; */
+}
+
+.transport {
+    border: 30px solid #ffffff; /* Altere a cor da borda para ser visível contra o fundo preto */
+
+}
