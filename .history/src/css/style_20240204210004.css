@@ -2,18 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-<<<<<<< Updated upstream
-    font-family: monospace;
-    font-size: 14px;
-    background-color: #000000;
-    color: #ffffff;
-    background-image: url('../img/Background.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh;
-=======
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Space Mono', monospace;
     background-color: #000000;
     color: #ffffff;
 }
@@ -37,11 +26,10 @@ body {
 }
 
 .login {
-    top: 30%;
+    top: 40%;
     /* Remova a propriedade bottom: 20px; */
 }
 
 .transport {
     border: 30px solid #ffffff; /* Altere a cor da borda para ser visível contra o fundo preto */
->>>>>>> Stashed changes
 }
