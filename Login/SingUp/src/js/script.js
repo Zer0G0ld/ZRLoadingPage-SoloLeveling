@@ -1,31 +1,29 @@
-// Redireciona ao clicar no botão
-document.getElementById("singInButton").onclick = function () {
-    window.location.href = "/Login/SingIn/index.html";
-};
-
-document.getElementById("homeButton").onclick = function () {
-    window.location.href = "/index.html";
-};
-
-// Registra o usuário
 function registerUser() {
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('pwd').value;
+    var checkbox = document.getElementById('chbox');
 
-    // Enviar dados para o servidor
+    if (!checkbox.checked) {
+        alert("Você deve aceitar os termos e condições para registrar.");
+        return false;
+    }
+
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "register.php", true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Exibir a resposta do servidor
-            console.log(xhr.responseText);
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                alert(xhr.responseText); // Exibe mensagem de sucesso
+                window.location.href = "/index.html"; // Redireciona após o registro
+            } else {
+                alert("Erro no registro do usuário: " + xhr.responseText); // Exibe mensagem de erro
+            }
         }
     };
 
-    // Enviar dados como JSON
     var data = {
         username: username,
         email: email,
@@ -33,4 +31,5 @@ function registerUser() {
     };
 
     xhr.send(JSON.stringify(data));
+    return false; // Impede o envio do formulário padrão
 }
