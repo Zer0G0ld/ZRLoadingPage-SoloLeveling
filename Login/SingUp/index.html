@@ -4,39 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="./src/css/style.css">
-
     <link rel="icon" href="../src/img/SoloIcon.png" type="image/png">
-
-    <title>Sing Up</title>
+    <title>Sign Up</title>
 </head>
 
 <body>
     <div class="content">
         <div class="create">
             <h1>Registre sua Conta</h1>
-            <form class="form" method="get">
-                <label>Usuário: </label><input type="text" id="username" placeholder="Nome de usuário">
+            <form class="form" method="post" onsubmit="return registerUser()">
+                <label>Usuário: </label><input type="text" id="username" name="username" placeholder="Nome de usuário" required>
                 <br><br>
-                <label>Email: </label><input type="email" id="email" placeholder="Example@dominio.com">
+                <label>Email: </label><input type="email" id="email" name="email" placeholder="Example@dominio.com" required>
                 <br><br>
-                <label>Senha: </label><input type="password" id="pwd" placeholder="Sua Senha">
+                <label>Senha: </label><input type="password" id="pwd" name="password" placeholder="Sua Senha" required>
                 <br><br>
                 <label>
-                    <input id="chbox" type="checkbox" name="checkbox">
+                    <input id="chbox" type="checkbox" required>
                     Aceito criar esta conta!
                 </label>
                 <br><br>
-
-                <button id="enter" type="submit" value="registrar" onclick="registerUser()">Registrar</button>
+                <button id="enter" type="submit" value="registrar">Registrar</button>
             </form>
-            <button id="singInButton">Logar</button>
-            <button id="homeButton">Home</button>
-
         </div>
     </div>
-
     <script src="./src/js/script.js"></script>
 </body>
 
